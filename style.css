@@ -1,0 +1,29 @@
+.box {
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blanchedalmond;
+    margin: 1rem;
+    height: 10rem;
+    width: 10rem;
+}
+
+.box-row {
+    display: flex;
+}
+
+.box:active {
+    background-color: rgb(238, 124, 124);
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+}
+
+button {
+    width: 5rem;
+    margin: 2rem;
+}
