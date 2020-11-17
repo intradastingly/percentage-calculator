@@ -1,13 +1,7 @@
 window.addEventListener('load',main);
 
 function main() {
-    buttonSubmit();
     percentageClick()
-}
-
-function buttonSubmit(){
-    const calculate = document.getElementById('calculate');
-    calculate.onclick = calculatePercentages;
 }
 
 function percentageClick(){
@@ -26,7 +20,7 @@ function selectBox(event) {
         const value = .12;
         calculatePercentages(value);
     } else if (id === "six"){
-        const value = .6;
+        const value = .06;
         calculatePercentages(value);
     } else if (id === "zero"){
         const value = .0;
@@ -35,15 +29,26 @@ function selectBox(event) {
 }
 
 function calculatePercentages(value){
-    const includes = document.getElementById('includesMoms').value;
-    const excludes = document.getElementById('excludessMoms').value;
-    const sum = document.getElementById('momsSum').value;
-    console.log(includes, excludes, sum)
-    console.log(value);
+    let includes = document.getElementById('includesMoms').value;
+    let excludes = document.getElementById('excludessMoms').value;
+    let sum = document.getElementById('momsSum').value;
+
+    //first input calculations
+    taxRemove = Number(includes * value);
+    excludesTax = includes - taxRemove;
+    taxSum = taxRemove;
+    
+    //second field
+
+    //third field
+
+    updateInputFields(includes, excludesTax, taxSum)
 }
 
-function updateInputFields(){
-
+function updateInputFields(includes, excludes, sum){
+    document.getElementById('excludessMoms').value = excludes;
+    document.getElementById('momsSum').value = sum;
+    console.log(includes, excludes, sum)
 }
 
 //take user input and apply to all boxes
